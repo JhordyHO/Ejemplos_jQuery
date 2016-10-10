@@ -54,8 +54,8 @@ and open the template in the editor.
                                     <li>99855675 - Juan </li>
                                     <li>97565775 - Pedro </li>
                                 </ul>
-                                <input id="cell" type="tel" class="col-xs-4 form-control" placeholder="Celular" lang="9"/>
-                                <input id="nombre" type="text" class="col-xs-4 form-control" placeholder="Nombre" lang="9"/>
+                                <input id="cell" type="tel" class="col-xs-4 form-control" placeholder="Celular" />
+                                <input id="nombre" type="text" class="col-xs-4 form-control" placeholder="Nombre" />
                                 <button id="add_number" class="btn btn-success btn-xs "><span class="glyphicon glyphicon-plus"></span></button>
                             </div>
                         </div>
@@ -159,9 +159,14 @@ and open the template in the editor.
                         </div>
                         <hr/>
                         <div class="row col-lg-offset-1">
-                            <h3> Ejemplo  <span class="badge">Ejm. 11</span></h3>
+                            <h3> Ejemplo Subir imagen (preview) <span class="badge">Ejm. 11</span></h3>
                             <div class="col-lg-offset-1 col-lg-4">
-
+                                <form method="post" id="formulario" enctype="multipart/form-data">
+                                    Subir imagen: <input class="form-control" id="upload_img" type="file" name="file">
+                                </form>
+                                <div id="respuesta">
+                                    <img id="imagen_load" class="img-thumbnail" />
+                                </div>
                             </div>
                         </div>
                         <hr/>
