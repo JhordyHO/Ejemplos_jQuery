@@ -75,14 +75,73 @@ $(document).ready(function () {
     });
     //----------------Subir imagenes ----------------------------
     $("input[name='file']").on("change", function () {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#imagen_load').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(this.files[0]);
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#imagen_load').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(this.files[0]);
 
     });
     //--------------------------------------------------------------
+    $('#ejemplo_modal').click(function (e) {
+        e.preventDefault();
+        var id = $(this).attr('href');
+        $('#mask').css({'width': 400, 'height': 400});
+        //poner efecto de transicion      
+        $('#mask').fadeIn(1000);
+        $('#mask').fadeTo("slow", 0.8);
+        //transition effect  
+        $(id).fadeIn(2000);
 
+    });
+    //clik en para cerrar el modal (div #masck)   
+    $('#mask').click(function () {
+        $(this).hide();
+        $('.window').hide();
+    });
+    //----------Efectos 01---------------------------
+    $("#opacidad05").click(function (event) {
+        $("#rectangulo").fadeTo("slow", 0.5);
+    });
+    $("#opacidad07").click(function (event) {
+        $("#rectangulo").fadeTo("fast", 0.7, function () {
+            alert('Efecto fadeTo terminado!');
+        });
+    });
+    $("#alternar01").click(function (event) {
+        $("#rectangulo").fadeToggle();
+    });
+    $("#alternar02").click(function (event) {
+        $("#rectangulo").fadeToggle(4000);
+    });
+    $("#alternar03").click(function (event) {
+        $("#rectangulo").fadeToggle("fast", function () {
+            alert('Efecto fadeToggle terminado!');
+        });
+    });
+    //----------Efectos 02-----------------------
+    $("#mostrar").click(function (event) {
+        $("#rectangulo2").fadeIn();
+    });
+    $("#mostrar2").click(function (event) {
+        $("#rectangulo").fadeIn(4000);
+    });
+    $("#mostrar3").click(function (event) {
+        $("#rectangulo2").fadeIn(4000, function () {
+            alert('Efecto fadeIn terminado!');
+        });
+    });
+    $("#ocultar").click(function (event) {
+        $("#rectangulo2").fadeOut();
+    });
+    $("#ocultar2").click(function (event) {
+        $("#rectangulo2").fadeOut(4000);
+    });
+    $("#ocultar3").click(function (event) {
+        $("#rectangulo2").fadeOut(4000, function () {
+            alert('Efecto fadeOut terminado!');
+        });
+    });
+    ////----------------------------------------
 
 });

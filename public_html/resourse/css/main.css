@@ -72,3 +72,14 @@ div.infoExtra {
 }
 .leerMas { color:blue; cursor:pointer; display:inline;}
 .leerMas:hover {color:purple; text-decoration:underline;}
+
+#mask {
+  position:absolute;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+#modale_ejemplo{
+color: #fff;
+margin: 10px;
+}
